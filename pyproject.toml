@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "gapi"
+version = "0.0.0"
+description = "An API for Gaussian Process models"
+authors = ["pjpollot <pollot.pierre@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.0"
+uvicorn = "^0.21.1"
+gpytorch = "^1.9.1"
+pytest = "^7.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
