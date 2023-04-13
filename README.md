@@ -1,6 +1,6 @@
 # GAPI
 
-A simple API for Gaussian Process models written in Python `3.9` using [FastAPI](https://fastapi.tiangolo.com/).
+A simple REST API for Gaussian Process models written in Python `3.9` using [FastAPI](https://fastapi.tiangolo.com/).
 
 ## Installation
 
