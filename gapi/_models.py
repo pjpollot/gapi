@@ -1,15 +1,20 @@
+from gpytorch.distributions import MultivariateNormal
+from gpytorch.kernels import MaternKernel, ScaleKernel
+from gpytorch.likelihoods import GaussianLikelihood
+from gpytorch.means import ConstantMean
+from gpytorch.mlls import ExactMarginalLogLikelihood
+from gpytorch.models import ExactGP
 from torch import Tensor
 from torch.optim import Adam
 
-from gpytorch.models import ExactGP
-from gpytorch.likelihoods import GaussianLikelihood
-from gpytorch.means import ConstantMean
-from gpytorch.kernels import ScaleKernel, MaternKernel
-from gpytorch.distributions import MultivariateNormal
-from gpytorch.mlls import ExactMarginalLogLikelihood
 
 class GPRegressionModel(ExactGP):
-    def __init__(self, train_x: Tensor, train_y: Tensor, training_auto: bool = True) -> None:
+    def __init__(
+            self,
+            train_x: Tensor,
+            train_y: Tensor,
+            training_auto: bool = True
+    ) -> None:
         super().__init__(train_x, train_y, GaussianLikelihood())
         self.mean_module = ConstantMean()
         self.covar_module = ScaleKernel(MaternKernel(nu=2.5))

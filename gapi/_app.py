@@ -1,12 +1,12 @@
-import torch
 import os
 
+import torch
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from gapi._objects import Input
 from gapi._models import GPRegressionModel
+from gapi._objects import Input
 
 gapi = FastAPI()
 
@@ -14,9 +14,11 @@ templates = Jinja2Templates(
     directory=os.path.join(os.path.dirname(__file__), "templates")
 )
 
+
 @gapi.get("/", response_class=HTMLResponse)
 def root():
     return templates.TemplateResponse("index.html", {"request": {}})
+
 
 @gapi.post("/predict")
 async def predict(input: Input):

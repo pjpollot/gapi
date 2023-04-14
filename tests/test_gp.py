@@ -1,8 +1,8 @@
 import torch
-
 from gpytorch.metrics import mean_squared_error
 
 from gapi._models import GPRegressionModel
+
 
 def test_gp_performance():
     torch.manual_seed(0)

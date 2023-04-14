@@ -1,6 +1,6 @@
-from gapi import gapi
-
 from fastapi.testclient import TestClient
+
+from gapi import gapi
 
 client = TestClient(gapi)
 
