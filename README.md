@@ -24,6 +24,18 @@ To run the API, use the following command:
 python main.py
 ```
 
+API call through HTTP request:
+
+```
+POST {your url}/predict
+
+with body: {
+"train_x": <list[list[float]]>,
+"train_y": <list[float]>,
+"x_to_predict": <list[list[float]]>
+}
+```
+
 ## Unit testing 
 
 To run the unit tests, use the following command on the root of this repository:
