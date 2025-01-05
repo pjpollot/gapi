@@ -30,9 +30,15 @@ API call through HTTP request:
 POST {your url}/predict
 
 with body: {
-"train_x": <list[list[float]]>,
-"train_y": <list[float]>,
-"x_to_predict": <list[list[float]]>
+"train_x": <the inputs where the GP is trained, type: list[list[float]]>,
+"train_y": <the labels which the GP is trained, type: list[float]>,
+"x_to_predict": <where to predict, type: list[list[float]]>
+}
+
+and returns (if successful): {
+"x": <the input 'x_to_predict'>,
+"mean": <posterior mean of type list[float]>
+"std": <the standard deviation of type list[float]>
 }
 ```
 
