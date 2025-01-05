@@ -24,7 +24,7 @@ To run the API, use the following command:
 python main.py
 ```
 
-API call through HTTP request:
+API call through a POST HTTP request:
 
 ```
 POST {your url}/predict
